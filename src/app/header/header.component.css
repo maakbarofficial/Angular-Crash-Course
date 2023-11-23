@@ -1,0 +1,21 @@
+nav img {
+  width: 90px;
+}
+
+nav {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+ul li {
+  display: inline-block;
+}
+
+ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+}
