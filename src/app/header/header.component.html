@@ -8,9 +8,16 @@
 
   <div>
     <ul>
-      <li><a href="">Home</a></li>
-      <li><a href="">About</a></li>
-      <li><a href="">Login</a></li>
+      <li><a routerLink="todo">Home</a></li>
+      <li><a routerLink="about">About</a></li>
+      <li><a routerLink="login">Login</a></li>
+      <li><a routerLink="register">Register</a></li>
+    </ul>
+    <ul>
+      <li><a routerLink="about/1">Ali</a></li>
+      <li><a routerLink="about/20">Akbar</a></li>
+      <li><a routerLink="about/30">Misbah</a></li>
     </ul>
   </div>
 </nav>
+<router-outlet></router-outlet>

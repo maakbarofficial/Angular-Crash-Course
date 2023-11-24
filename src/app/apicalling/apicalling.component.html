@@ -1,0 +1,12 @@
+<h2>This data is fetched from API</h2>
+<div *ngFor="let post of posts">
+  <li>{{ post.id }}</li>
+  <li>{{ post.title }}</li>
+  <li>{{ post.body }}</li>
+</div>
+
+<form #postForm="ngForm" (ngSubmit)="getPostFormData(postForm.value)">
+  <input ngModel type="text" name="title" placeholder="title" />
+  <textarea ngModel type="text" name="body" placeholder="body"></textarea>
+  <button>Submit Post to API</button>
+</form>

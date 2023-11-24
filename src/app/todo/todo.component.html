@@ -6,3 +6,6 @@
 <ul *ngFor="let task of tasks">
   <li>{{ task.name }} <button (click)="removeTask(task.id)">Remove</button></li>
 </ul>
+
+<a routerLink="userlist">userlist</a>
+<router-outlet></router-outlet>

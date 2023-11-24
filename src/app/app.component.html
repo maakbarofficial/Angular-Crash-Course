@@ -103,3 +103,50 @@
 <app-register></app-register>
 <br /><br /><br /><br /><br />
 <app-todo></app-todo>
+<br /><br /><br /><br /><br />
+<h1>Passing Data From Parent to Child</h1>
+<app-childcomponent [item]="dataForChild"></app-childcomponent>
+<br /><br /><br /><br /><br />
+<h1>Reusable Component</h1>
+<ul *ngFor="let user of userDetails">
+  <app-user-details [usersData]="user"></app-user-details>
+</ul>
+<br /><br /><br /><br /><br />
+<h1>Passing Data From Child to Parent</h1>
+<p>{{ newData }}</p>
+<app-childtoparent (updateDataEvent)="updateData($event)"></app-childtoparent>
+<br /><br /><br /><br /><br />
+<app-twowaybinding></app-twowaybinding>
+<br /><br /><br /><br /><br />
+<h1>Template Reference Variable</h1>
+<input type="text" #btn placeholder="this is ref" />
+<button (click)="callbtn(btn)">Call a Variable</button>
+<button (click)="callbtn(btn.placeholder)">Call a Placeholder</button>
+<br /><br /><br /><br /><br />
+<h1>Pipes</h1>
+<p>{{ title | uppercase }}</p>
+<p>{{ title | lowercase }}</p>
+<p>{{ today }}</p>
+<p>{{ today | date }}</p>
+<p>{{ today | date : "fullDate" }}</p>
+<br /><br /><br /><br /><br />
+<h1>Advanced Pipes</h1>
+<p>{{ title | slice : 3 : 6 | uppercase }}</p>
+<p>{{ userObject | json }}</p>
+<p>{{ 2000.365465 | number : "2.2-3" }}</p>
+<p>{{ 100 | currency : "USD" }}</p>
+<br /><br /><br /><br /><br />
+<h1>Custom Pipes</h1>
+<p>{{ 25 | usdpkr : 300 }}</p>
+<br /><br /><br /><br /><br />
+<h1>Directives</h1>
+<p>These are builtin => *ngIf, *ngSwitch</p>
+<p appRedEl>This is custom directive</p>
+<br /><br /><br /><br /><br />
+<h1>Services</h1>
+<p *ngFor="let users of usersData">{{ users.name }}</p>
+<br /><br /><br /><br /><br />
+<h1>Calling API</h1>
+<p *ngFor="let users of usersData">{{ users.name }}</p>
+<br /><br /><br /><br /><br />
+<app-apicalling></app-apicalling>

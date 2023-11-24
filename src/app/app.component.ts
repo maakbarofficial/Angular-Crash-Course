@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserdataService } from './services/userdata.service';
 
 @Component({
   selector: 'app-root',
@@ -82,5 +83,39 @@ export class AppComponent {
   updateColor() {
     this.color = 'blue';
     this.bgColor = 'gray';
+  }
+
+  dataForChild = 'this is data for child';
+
+  userDetails = [
+    { name: 'User1', email: 'user1@abc.com' },
+    { name: 'User2', email: 'user2@abc.com' },
+    { name: 'User3', email: 'user3@abc.com' },
+    { name: 'User4', email: 'user4@abc.com' },
+    { name: 'User5', email: 'user5@abc.com' },
+  ];
+
+  newData = '';
+
+  updateData(item: string) {
+    this.newData = item;
+    console.log(item);
+  }
+
+  callbtn(item: any) {
+    console.log(item);
+  }
+
+  today = Date();
+
+  userObject = {
+    name: 'Akbar',
+    age: 23,
+  };
+
+  usersData: any = [];
+
+  constructor(private userdata: UserdataService) {
+    this.usersData = userdata.user();
   }
 }
